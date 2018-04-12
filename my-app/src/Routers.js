@@ -4,13 +4,9 @@ const Routers =()=>(
 <Router>
 <Route path="/" component={(props)=>(
 <App {...props}>
-<<<<<<< HEAD
-
-=======
 <Switch>
 <Route path="/homeFeed"></Route>
 </Switch>
->>>>>>> master
 
 </App>
 )}/>
