@@ -35,6 +35,10 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|svg|woff|cur)$/,
         use: ["file-loader?name=imager/[hash]"]
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader","css-loader"]
       }
     ]
   }
