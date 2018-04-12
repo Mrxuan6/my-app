@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import LoadingPage from './component/loadingPage/index.js';
+import {Route,Link,Switch,BrowserRouter as Router} from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -13,6 +15,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        {this.props.children}
       </div>
     );
   }

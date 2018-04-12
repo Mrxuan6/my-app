@@ -23,7 +23,7 @@ module.exports = {
   devServer: {
     hot: false,
     contentBase:path.join(__dirname,"build"),
-    port:3000
+    port:5000
   },
   module: {
     rules: [
@@ -34,7 +34,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg|woff|cur)$/,
-        use: ["file-loader?name=imager/[hash]"]
+        use: ["file-loader?name=images/[hash].[ext]"]
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader","css-loader"]
       }
     ]
   }
