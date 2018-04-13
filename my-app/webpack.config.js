@@ -21,9 +21,11 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    hot: false,
+    hot: true,
+    disableHostCheck: true,
+
+    watchContentBase: true,
     contentBase:path.join(__dirname,"build"),
-    historyApiFallback:false,
     port:5000
   },
   module: {

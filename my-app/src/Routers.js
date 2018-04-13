@@ -26,6 +26,7 @@ const history = createHistory()
 
 </App>
 )}/>
+
 </Switch> 
 
 </div>

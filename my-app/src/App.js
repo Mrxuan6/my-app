@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import LoadingPage from './component/loadingPage/index.js';
+import { connect } from "react-redux";
 import {Route,Link,Switch,BrowserRouter as Router} from "react-router-dom";
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="App">
@@ -20,5 +21,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
