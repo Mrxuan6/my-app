@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import {Route,Link,Switch,BrowserRouter as Router} from "react-router-dom";
+import {Route,Link,Switch,Redirect,BrowserRouter as Router} from "react-router-dom";
 import {Provider} from "react-redux";
 import {ConnectedRouter} from "react-router-redux";
 import createHistory from "history/createBrowserHistory"
@@ -15,26 +15,17 @@ const history = createHistory()
       return (
 <Provider store={store}>
 <ConnectedRouter history={history}>
-<div>
+<App>
+  <Link to={"/bb"}>啦啦啦</Link>
  <Switch> 
-  
-<Route exact path="/" render={(props)=>(
-<App {...props}>
- <Switch> 
-<Route path="/loading"  component={LoadingPage}/> 
- </Switch> 
-
-</App>
-)}/>
-
+<Route path={"/aa"}  component={App}/>
+<Route path={"/bb"}  component={LoadingPage}/>
+{/* <Redirect to="/"/> */}
 </Switch> 
 
-</div>
+</App>
 
 </ConnectedRouter>
- 
-
-
 </Provider>
       )
     }
