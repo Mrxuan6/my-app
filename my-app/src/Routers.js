@@ -1,6 +1,6 @@
 import React,{Component} from "react";
-import {Route,Link,Switch,Redirect,BrowserRouter as Router} from "react-router-dom";
 import {Provider} from "react-redux";
+import {Route,Link,Switch,Redirect,BrowserRouter as Router} from "react-router-dom";
 import {ConnectedRouter} from "react-router-redux";
 import createHistory from "history/createBrowserHistory"
 import store from "./store/index.js"
@@ -8,6 +8,7 @@ import store from "./store/index.js"
 // export default Routers =()=>(
 import App from './App';
 import LoadingPage from './component/loadingPage/index.js';
+import ListPage from './component/listPage/index.js';
 
 const history = createHistory()
   export default class Routers extends Component {
@@ -20,6 +21,7 @@ const history = createHistory()
  <Switch> 
 <Route path={"/aa"}  component={App}/>
 <Route path={"/bb"}  component={LoadingPage}/>
+<Route path={"/cc"}  component={ListPage}/>
 {/* <Redirect to="/"/> */}
 </Switch> 
 
@@ -33,4 +35,4 @@ const history = createHistory()
   }
 // )
 
-
+ 

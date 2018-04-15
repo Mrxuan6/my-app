@@ -26,7 +26,6 @@ module.exports = {
     watchContentBase: true,
     historyApiFallback:true,
     contentBase:path.join(__dirname,"build"),
-    port:5000
   },
   module: {
     rules: [
