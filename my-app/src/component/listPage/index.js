@@ -21,9 +21,7 @@ export default class ListPage extends React.Component {
       <div>
         <Link to={"/cc/ee"}>goup1</Link>
         <p>ListPage!!!</p>
-        <div>
         <Route path={"/cc/ee"}  component={Group1}/>
-        </div>
       </div>
     );
   }
