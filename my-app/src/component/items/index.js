@@ -5,7 +5,9 @@
  */
 import { connect } from "react-redux";
 import React from "react";
-import Swiper from "react-id-swiper";
+
+import SimpleCarousel from 'component/swipable/index.js';
+// import Swiper from "react-id-swiper";
 
 
 export default class Item1 extends React.Component {
@@ -16,13 +18,9 @@ export default class Item1 extends React.Component {
   render() {
     alert("Item1")
     return (
-      <Swiper>
-      <div>Slide 1</div>
-      <div>Slide 2</div>
-      <div>Slide 3</div>
-      <div>Slide 4</div>
-      <div>Slide 5</div>
-    </Swiper>
+     <div>
+       <SimpleCarousel/>
+     </div>
     );
   }
 }
