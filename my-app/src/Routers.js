@@ -22,8 +22,8 @@ const history = createHistory()
  <Switch> 
 <Route path={"/aa"}  render={(props)=>(
 <App>
-  <Link to={"/aa/ff"}>666</Link>
-<Route path={"/aa/ff"}  component={Item1}/>
+  <Link to={`${props.match.path}/ff`}>666</Link>
+<Route path={`${props.match.path}/ff`}  component={Item1}/>
 </App>
 
 )}/>
