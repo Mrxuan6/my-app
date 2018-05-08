@@ -9,6 +9,7 @@ import store from "./store/index.js"
 import App from './App';
 import LoadingPage from './component/loadingPage/index.js';
 import ListPage from './component/listPage/index.js';
+import SetInHtml from './component/SetInHtml/index.js';
 import Item1 from './component/items/index.js';
 
 const history = createHistory()
@@ -19,6 +20,7 @@ const history = createHistory()
 <ConnectedRouter history={history}>
 <App>
   <Link to={"/bb"}>啦啦啦</Link>
+  <Link to={"/setInHtml"}>setInHtml</Link>
  <Switch> 
 <Route path={"/aa"}  render={(props)=>(
 <App>
@@ -28,6 +30,7 @@ const history = createHistory()
 
 )}/>
 <Route path={"/bb"}  component={LoadingPage}/>
+<Route path={"/setInHtml"}  component={SetInHtml}/>
 <Route path={"/cc"}  component={ListPage}/>
 {/* <Redirect to="/"/> */}
 </Switch> 
