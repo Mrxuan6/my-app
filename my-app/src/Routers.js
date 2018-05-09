@@ -4,13 +4,31 @@ import {Route,Link,Switch,Redirect,BrowserRouter as Router} from "react-router-d
 import {ConnectedRouter} from "react-router-redux";
 import createHistory from "history/createBrowserHistory"
 import store from "./store/index.js"
-
+import Loadable from "react-loadable"
+import MyLoadingComponent from './component/LoadingComponent/index.js';
 // export default Routers =()=>(
 import App from './App';
-import LoadingPage from './component/loadingPage/index.js';
-import ListPage from './component/listPage/index.js';
-import SetInHtml from './component/SetInHtml/index.js';
-import Item1 from './component/items/index.js';
+const AsyncLoadingPage= Loadable({
+  loader: () => import('./component/loadingPage/index.js'),
+  loading: MyLoadingComponent
+});
+// import LoadingPage from './component/loadingPage/index.js';
+
+const AsyncListPage= Loadable({
+  loader: () => import('./component/listPage/index.js'),
+  loading: MyLoadingComponent
+});
+// import ListPage from './component/listPage/index.js';
+const AsyncSetInHtml= Loadable({
+  loader: () => import('./component/SetInHtml/index.js'),
+  loading: MyLoadingComponent
+});
+// import SetInHtml from './component/SetInHtml/index.js';
+const AsyncItem1= Loadable({
+  loader: () => import('./component/items/index.js'),
+  loading: MyLoadingComponent
+});
+// import Item1 from './component/items/index.js';
 
 const history = createHistory()
   export default class Routers extends Component {
@@ -25,13 +43,13 @@ const history = createHistory()
 <Route path={"/aa"}  render={(props)=>(
 <App>
   <Link to={`${props.match.path}/ff`}>666</Link>
-<Route path={`${props.match.path}/ff`}  component={Item1}/>
+<Route path={`${props.match.path}/ff`}  component={AsyncItem1}/>
 </App>
 
 )}/>
-<Route path={"/bb"}  component={LoadingPage}/>
-<Route path={"/setInHtml"}  component={SetInHtml}/>
-<Route path={"/cc"}  component={ListPage}/>
+<Route path={"/bb"}  component={AsyncLoadingPage}/>
+<Route path={"/setInHtml"}  component={AsyncSetInHtml}/>
+<Route path={"/cc"}  component={AsyncListPage}/>
 {/* <Redirect to="/"/> */}
 </Switch> 
 
