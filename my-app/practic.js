@@ -13,6 +13,7 @@ function getNewAry(num) {
   var newAry = [];
   var numAry = Number(num)
     .toString()
+    .replace(/0|1/g, "")
     .split("");
   for (var i = 0; i < numAry.length; i++) {
     newAry.push(initAry[numAry[i] - 1]);
@@ -25,18 +26,25 @@ function getNewAry(num) {
   function getNextAry(preAry) {
     var resultAry = [];
     for (var u = 0; u < preAry.length; u++) {
-      for (var p = 0; p < newAry[z + 1].length ; p++) {
-        resultAry.push(preAry[u] + newAry[z + 1][p]);
+      if (newAry.length > 1) {
+        for (var p = 0; p < newAry[z + 1].length; p++) {
+          resultAry.push(preAry[u] + newAry[z + 1][p]);
+        }
+      } else {
+        resultAry.push(preAry[u]);
       }
     }
     z++;
     if (z < newAry.length - 1) {
       getNextAry(resultAry);
     } else {
-      console.log(resultAry,resultAry.length, "resultAry");
       return resultAry;
     }
   }
-  getNextAry(newAry[0]);
+  if(newAry.length>0){
+    return getNextAry(newAry[0]);
+  }else{
+      return [];
+  }
 }
-getNewAry(12);
+console.log(getNewAry(11112101110113));
