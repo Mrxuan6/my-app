@@ -12,16 +12,24 @@ import {Route,Link,Switch,Redirect,BrowserRouter as Router} from "react-router-d
 
 export default class ListPage extends React.Component {
   componentDidMount() {
-    // openApp("group", 1262040 + "");
-    // openApp("group", this.props.params.gid);
+    this.test()
+  }
+  test =() =>{
+@testable
+class MyTestableClass {
+  // ...
+} 
+
+function testable(target) {
+  target.isTestable = true;
+}
+
+MyTestableClass.isTestable // true
   }
   render() {
-    alert(555)
     return (
       <div>
-        <Link to={"/cc/ee"}>goup1</Link>
-        <p>ListPage!!!</p>
-        <Route path={"/cc/ee"}  component={Group1}/>
+        decorator
       </div>
     );
   }

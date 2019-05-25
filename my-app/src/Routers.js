@@ -18,6 +18,10 @@ const AsyncListPage= Loadable({
   loader: () => import('./component/listPage/index.js'),
   loading: MyLoadingComponent
 });
+const AsyncRxjsPage= Loadable({
+  loader: () => import('./component/rxjs/index.js'),
+  loading: MyLoadingComponent
+});
 // import ListPage from './component/listPage/index.js';
 const AsyncSetInHtml= Loadable({
   loader: () => import('./component/SetInHtml/index.js'),
@@ -48,6 +52,8 @@ const history = createHistory()
 
 )}/>
 <Route path={"/bb"}  component={AsyncLoadingPage}/>
+<Route path={"/rx"}  component={AsyncRxjsPage}/>
+
 <Route path={"/setInHtml"}  component={AsyncSetInHtml}/>
 <Route path={"/cc"}  component={AsyncListPage}/>
 {/* <Redirect to="/"/> */}
