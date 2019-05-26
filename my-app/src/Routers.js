@@ -12,6 +12,10 @@ const AsyncLoadingPage= Loadable({
   loader: () => import('./component/loadingPage/index.js'),
   loading: MyLoadingComponent
 });
+const AsyncVideoPage= Loadable({
+  loader: () => import('./containers/videoPage/index.js'),
+  loading: MyLoadingComponent
+});
 // import LoadingPage from './component/loadingPage/index.js';
 
 const AsyncListPage= Loadable({
@@ -41,8 +45,8 @@ const history = createHistory()
 <Provider store={store}>
 <ConnectedRouter history={history}>
 <App>
-  <Link to={"/bb"}>啦啦啦</Link>
-  <Link to={"/setInHtml"}>setInHtml</Link>
+  {/* <Link to={"/bb"}>啦啦啦</Link> */}
+  {/* <Link to={"/setInHtml"}>setInHtml</Link> */}
  <Switch> 
 <Route path={"/aa"}  render={(props)=>(
 <App>
@@ -52,6 +56,7 @@ const history = createHistory()
 
 )}/>
 <Route path={"/bb"}  component={AsyncLoadingPage}/>
+<Route path={"/video"}  component={AsyncVideoPage}/>
 <Route path={"/rx"}  component={AsyncRxjsPage}/>
 
 <Route path={"/setInHtml"}  component={AsyncSetInHtml}/>

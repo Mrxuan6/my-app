@@ -1,0 +1,10 @@
+.jumpButton{
+display: inline-block;
+width: 50px;
+height: 30px;
+text-align: center;
+line-height: 30px;
+border: 1px solid #cccccc;
+text-decoration: none;
+color: #5c5c5c;
+}
